@@ -130,6 +130,16 @@
             display: none;
         }
         
+        .selected-correct {
+            background: #d4edda !important;
+            border-color: #28a745 !important;
+        }
+        
+        .selected-wrong {
+            background: #f8d7da !important;
+            border-color: #dc3545 !important;
+        }
+        
         .stats {
             background: #f0f4ff;
             padding: 20px;
@@ -148,358 +158,359 @@
     <div class="container">
         <div class="header">
             <h1>🏢 Building Automation & Smart Building</h1>
-            <p>Quiz Reviewer - Click "Show Answer" to reveal correct answers</p>
+            <p>Take the quiz and submit to see your score!</p>
         </div>
         
         <div class="content">
             <div class="stats">
                 <h3>Total Questions: 33</h3>
                 <p>Review each question carefully. Correct answers are highlighted in green.</p>
+                <div id="score-display" style="display:none; margin-top:10px;"><h3>Your Score: <span id="score">0</span>/33</h3></div>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 1</div>
                 <div class="question-text">Which of the following is the primary objective of a Building Automation System (BAS)?</div>
                 <ul class="options">
-                    <li>a. To increase construction costs</li>
-                    <li class="correct">b. To improve occupant comfort and reduce energy use</li>
-                    <li>c. To make buildings taller</li>
-                    <li>d. To replace architectural design</li>
+                    <li><input type="radio" name="q1" value="a"> a. To increase construction costs</li>
+                    <li><input type="radio" name="q1" value="b"> b. To improve occupant comfort and reduce energy use</li>
+                    <li><input type="radio" name="q1" value="c"> c. To make buildings taller</li>
+                    <li><input type="radio" name="q1" value="d"> d. To replace architectural design</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 2</div>
                 <div class="question-text">Which of the following is usually the largest energy consumer in a building?</div>
                 <ul class="options">
-                    <li>a. Lighting system</li>
-                    <li class="correct">b. HVAC system</li>
-                    <li>c. Water management system</li>
-                    <li>d. Elevator system</li>
+                    <li><input type="radio" name="q2" value="a"> a. Lighting system</li>
+                    <li><input type="radio" name="q2" value="b"> b. HVAC system</li>
+                    <li><input type="radio" name="q2" value="c"> c. Water management system</li>
+                    <li><input type="radio" name="q2" value="d"> d. Elevator system</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 3</div>
                 <div class="question-text">Which of the following best describes the concept of a "Smart Building"?</div>
                 <ul class="options">
-                    <li>a. A building that uses only high-efficiency materials during construction</li>
-                    <li class="correct">b. A building where integrated technologies optimize energy, comfort, and operations through automation</li>
-                    <li>c. A building designed with advanced structural load-bearing systems</li>
-                    <li>d. A building with prioritizes aesthetics over performance</li>
+                    <li><input type="radio" name="q3" value="a"> a. A building that uses only high-efficiency materials during construction</li>
+                    <li><input type="radio" name="q3" value="b"> b. A building where integrated technologies optimize energy, comfort, and operations through automation</li>
+                    <li><input type="radio" name="q3" value="c"> c. A building designed with advanced structural load-bearing systems</li>
+                    <li><input type="radio" name="q3" value="d"> d. A building with prioritizes aesthetics over performance</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 4</div>
                 <div class="question-text">What is the primary disadvantage of an all-air HVAC system?</div>
                 <ul class="options">
-                    <li>a. It is difficult to install</li>
-                    <li class="correct">b. Requires close cooperation between architects and system designers</li>
-                    <li>c. Cannot use outdoor air for cooling</li>
-                    <li>d. Occupants are always exposed to mechanical noise</li>
+                    <li><input type="radio" name="q4" value="a"> a. It is difficult to install</li>
+                    <li><input type="radio" name="q4" value="b"> b. Requires close cooperation between architects and system designers</li>
+                    <li><input type="radio" name="q4" value="c"> c. Cannot use outdoor air for cooling</li>
+                    <li><input type="radio" name="q4" value="d"> d. Occupants are always exposed to mechanical noise</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 5</div>
                 <div class="question-text">Which lighting control strategy directly reduces energy use by switching lights based on room presence?</div>
                 <ul class="options">
-                    <li>a. Daylight sensors</li>
-                    <li class="correct">b. Occupancy sensors</li>
-                    <li>c. Timer switches</li>
-                    <li>d. RGB dimmers</li>
+                    <li><input type="radio" name="q5" value="a"> a. Daylight sensors</li>
+                    <li><input type="radio" name="q5" value="b"> b. Occupancy sensors</li>
+                    <li><input type="radio" name="q5" value="c"> c. Timer switches</li>
+                    <li><input type="radio" name="q5" value="d"> d. RGB dimmers</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="a">
                 <div class="question-number">Question 6</div>
                 <div class="question-text">Compared to traditional roof systems, one major limitation of membrane structures is:</div>
                 <ul class="options">
-                    <li class="correct">a. They cannot cover large spans</li>
-                    <li>b. They have lower thermal and acoustic insulation</li>
-                    <li>c. They are always permanent and rigid</li>
-                    <li>d. They require massive foundations</li>
+                    <li><input type="radio" name="q6" value="a"> a. They cannot cover large spans</li>
+                    <li><input type="radio" name="q6" value="b"> b. They have lower thermal and acoustic insulation</li>
+                    <li><input type="radio" name="q6" value="c"> c. They are always permanent and rigid</li>
+                    <li><input type="radio" name="q6" value="d"> d. They require massive foundations</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 7</div>
                 <div class="question-text">The introduction of electrical and electronic controls allowed centralized control of heating and ventilation systems during the early 20th century. True or False?</div>
                 <ul class="options">
-                    <li>a. True</li>
-                    <li class="correct">b. False</li>
+                    <li><input type="radio" name="q7" value="a"> a. True</li>
+                    <li><input type="radio" name="q7" value="b"> b. False</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="c">
                 <div class="question-number">Question 8</div>
                 <div class="question-text">It is the network of Internet-connected devices that collect, share, and analyze data, often via cloud computing.</div>
                 <ul class="options">
-                    <li>a. BAS</li>
-                    <li>b. DDC</li>
-                    <li class="correct">c. IoT</li>
-                    <li>d. A or C</li>
+                    <li><input type="radio" name="q8" value="a"> a. BAS</li>
+                    <li><input type="radio" name="q8" value="b"> b. DDC</li>
+                    <li><input type="radio" name="q8" value="c"> c. IoT</li>
+                    <li><input type="radio" name="q8" value="d"> d. A or C</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="c">
                 <div class="question-number">Question 9</div>
                 <div class="question-text">A local example of tensile membrane use in the Philippines is:</div>
                 <ul class="options">
-                    <li>a. MOA Grounds</li>
-                    <li>b. UP Oval</li>
-                    <li class="correct">c. SM South mall Canopy</li>
-                    <li>d. Manila City Hall</li>
+                    <li><input type="radio" name="q9" value="a"> a. MOA Grounds</li>
+                    <li><input type="radio" name="q9" value="b"> b. UP Oval</li>
+                    <li><input type="radio" name="q9" value="c"> c. SM South mall Canopy</li>
+                    <li><input type="radio" name="q9" value="d"> d. Manila City Hall</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 10</div>
                 <div class="question-text">Which is a key reason for the rising use of tensile membrane structures today?</div>
                 <ul class="options">
-                    <li>a. Need for heavier stone construction</li>
-                    <li class="correct">b. Growing demand for energy-efficient solutions</li>
-                    <li>c. Reduced importance of aesthetics</li>
-                    <li>d. Elimination of steel in architecture</li>
+                    <li><input type="radio" name="q10" value="a"> a. Need for heavier stone construction</li>
+                    <li><input type="radio" name="q10" value="b"> b. Growing demand for energy-efficient solutions</li>
+                    <li><input type="radio" name="q10" value="c"> c. Reduced importance of aesthetics</li>
+                    <li><input type="radio" name="q10" value="d"> d. Elimination of steel in architecture</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="a">
                 <div class="question-number">Question 11</div>
                 <div class="question-text">Which of the following best describes a membrane structure?</div>
                 <ul class="options">
-                    <li class="correct">a. A thin, load-bearing surface</li>
-                    <li>b. A wall made of heavy stone</li>
-                    <li>c. A prefabricated concrete shell</li>
+                    <li><input type="radio" name="q11" value="a"> a. A thin, load-bearing surface</li>
+                    <li><input type="radio" name="q11" value="b"> b. A wall made of heavy stone</li>
+                    <li><input type="radio" name="q11" value="c"> c. A prefabricated concrete shell</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="c">
                 <div class="question-number">Question 12</div>
                 <div class="question-text">What is the primary characteristic of membrane structures?</div>
                 <ul class="options">
-                    <li>a. They are always made of glass</li>
-                    <li>b. They withstand heavy compression</li>
-                    <li class="correct">c. They carry loads mainly through tension</li>
-                    <li>d. They require thick foundations</li>
+                    <li><input type="radio" name="q12" value="a"> a. They are always made of glass</li>
+                    <li><input type="radio" name="q12" value="b"> b. They withstand heavy compression</li>
+                    <li><input type="radio" name="q12" value="c"> c. They carry loads mainly through tension</li>
+                    <li><input type="radio" name="q12" value="d"> d. They require thick foundations</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 13</div>
                 <div class="question-text">It is a type of membrane structure in which the center of curvature are located on opposing sides of the surface. Commonly described as a saddle shape.</div>
                 <ul class="options">
-                    <li>a. Parallel Arch</li>
-                    <li class="correct">b. Anticlastic</li>
-                    <li>c. Barrel Vault</li>
-                    <li>d. Cable Net membrane</li>
+                    <li><input type="radio" name="q13" value="a"> a. Parallel Arch</li>
+                    <li><input type="radio" name="q13" value="b"> b. Anticlastic</li>
+                    <li><input type="radio" name="q13" value="c"> c. Barrel Vault</li>
+                    <li><input type="radio" name="q13" value="d"> d. Cable Net membrane</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="c">
                 <div class="question-number">Question 14</div>
                 <div class="question-text">In a composite system, these are the main composite elements of the building, EXCEPT:</div>
                 <ul class="options">
-                    <li>a. Composite Slab</li>
-                    <li>b. Composite Beam</li>
-                    <li class="correct">c. Composite Wall</li>
+                    <li><input type="radio" name="q14" value="a"> a. Composite Slab</li>
+                    <li><input type="radio" name="q14" value="b"> b. Composite Beam</li>
+                    <li><input type="radio" name="q14" value="c"> c. Composite Wall</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 15</div>
                 <div class="question-text">In water management systems, which of the following fixtures uses the most water in a typical home?</div>
                 <ul class="options">
-                    <li>a. Faucets</li>
-                    <li class="correct">b. Toilets</li>
-                    <li>c. Dishwashers</li>
-                    <li>d. Showers</li>
+                    <li><input type="radio" name="q15" value="a"> a. Faucets</li>
+                    <li><input type="radio" name="q15" value="b"> b. Toilets</li>
+                    <li><input type="radio" name="q15" value="c"> c. Dishwashers</li>
+                    <li><input type="radio" name="q15" value="d"> d. Showers</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="c">
                 <div class="question-number">Question 16</div>
                 <div class="question-text">Who was the true originator of the first geodesic dome, built in 1926?</div>
                 <ul class="options">
-                    <li>a. R. Buckminster Fuller</li>
-                    <li>b. Antoni Gaudí</li>
-                    <li class="correct">c. Walther Bauersfeld</li>
-                    <li>d. Le Corbusier</li>
+                    <li><input type="radio" name="q16" value="a"> a. R. Buckminster Fuller</li>
+                    <li><input type="radio" name="q16" value="b"> b. Antoni Gaudí</li>
+                    <li><input type="radio" name="q16" value="c"> c. Walther Bauersfeld</li>
+                    <li><input type="radio" name="q16" value="d"> d. Le Corbusier</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="a">
                 <div class="question-number">Question 17</div>
                 <div class="question-text">Based on the image showing a concrete slab with support column, which type of slab is this?</div>
                 <ul class="options">
-                    <li class="correct">a. Haunched Slab</li>
-                    <li>b. Conventional</li>
-                    <li>c. T-Beam</li>
-                    <li>d. Steel Bars</li>
+                    <li><input type="radio" name="q17" value="a"> a. Haunched Slab</li>
+                    <li><input type="radio" name="q17" value="b"> b. Conventional</li>
+                    <li><input type="radio" name="q17" value="c"> c. T-Beam</li>
+                    <li><input type="radio" name="q17" value="d"> d. Steel Bars</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 18</div>
                 <div class="question-text">Which of the following best describes a membrane structure?</div>
                 <ul class="options">
-                    <li>a. A rigid load-bearing system</li>
-                    <li class="correct">b. A lightweight tensile surface supported by cables or frames</li>
-                    <li>c. A prefabricated concrete shell</li>
+                    <li><input type="radio" name="q18" value="a"> a. A rigid load-bearing system</li>
+                    <li><input type="radio" name="q18" value="b"> b. A lightweight tensile surface supported by cables or frames</li>
+                    <li><input type="radio" name="q18" value="c"> c. A prefabricated concrete shell</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 19</div>
                 <div class="question-text">An architect is designing a smart building that integrates BAS to enhance sustainability and occupant comfort. Which design decision best demonstrates the collaboration of architecture and BAS to reduce energy use while maintaining indoor comfort?</div>
                 <ul class="options">
-                    <li>a. Using large south-facing glass façades without shading devices</li>
-                    <li class="correct">b. Incorporating economizer control with operable windows and natural ventilation strategies</li>
-                    <li>c. Designing open-plan spaces without consideration of air zoning or BAS</li>
+                    <li><input type="radio" name="q19" value="a"> a. Using large south-facing glass façades without shading devices</li>
+                    <li><input type="radio" name="q19" value="b"> b. Incorporating economizer control with operable windows and natural ventilation strategies</li>
+                    <li><input type="radio" name="q19" value="c"> c. Designing open-plan spaces without consideration of air zoning or BAS</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 20</div>
                 <div class="question-text">Which load condition is usually the most critical in designing tensile membrane structures?</div>
                 <ul class="options">
-                    <li>a. Dead load of the fabric</li>
-                    <li class="correct">b. Wind load and uplift forces</li>
-                    <li>c. Earthquake vibration</li>
-                    <li>d. Self-weight of the supporting frame</li>
+                    <li><input type="radio" name="q20" value="a"> a. Dead load of the fabric</li>
+                    <li><input type="radio" name="q20" value="b"> b. Wind load and uplift forces</li>
+                    <li><input type="radio" name="q20" value="c"> c. Earthquake vibration</li>
+                    <li><input type="radio" name="q20" value="d"> d. Self-weight of the supporting frame</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 21</div>
                 <div class="question-text">Compared to traditional roof systems, one major limitation of membrane structures is:</div>
                 <ul class="options">
-                    <li>a. They cannot cover large spans</li>
-                    <li class="correct">b. They have lower thermal and acoustic insulation</li>
-                    <li>c. They are always permanent and rigid</li>
-                    <li>d. They require massive foundations</li>
+                    <li><input type="radio" name="q21" value="a"> a. They cannot cover large spans</li>
+                    <li><input type="radio" name="q21" value="b"> b. They have lower thermal and acoustic insulation</li>
+                    <li><input type="radio" name="q21" value="c"> c. They are always permanent and rigid</li>
+                    <li><input type="radio" name="q21" value="d"> d. They require massive foundations</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="c">
                 <div class="question-number">Question 22</div>
                 <div class="question-text">Thermostats were introduced which allowed finer control of HVAC systems during what period?</div>
                 <ul class="options">
-                    <li>a. Late 20th Century (80s-90s)</li>
-                    <li>b. 21st Century</li>
-                    <li class="correct">c. Mid-20th Century (60s-70s)</li>
-                    <li>d. None of the above</li>
+                    <li><input type="radio" name="q22" value="a"> a. Late 20th Century (80s-90s)</li>
+                    <li><input type="radio" name="q22" value="b"> b. 21st Century</li>
+                    <li><input type="radio" name="q22" value="c"> c. Mid-20th Century (60s-70s)</li>
+                    <li><input type="radio" name="q22" value="d"> d. None of the above</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="d">
                 <div class="question-number">Question 23</div>
                 <div class="question-text">An open communication standard for BAS devices to talk to each other regardless of manufacturer.</div>
                 <ul class="options">
-                    <li>a. Local Operating Network (LON)</li>
-                    <li>b. Local Area Network (LAN)</li>
-                    <li>c. Direct Digital Control (DDC)</li>
-                    <li class="correct">d. BACnet (Building Automation and Control Network)</li>
+                    <li><input type="radio" name="q23" value="a"> a. Local Operating Network (LON)</li>
+                    <li><input type="radio" name="q23" value="b"> b. Local Area Network (LAN)</li>
+                    <li><input type="radio" name="q23" value="c"> c. Direct Digital Control (DDC)</li>
+                    <li><input type="radio" name="q23" value="d"> d. BACnet (Building Automation and Control Network)</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="d">
                 <div class="question-number">Question 24</div>
                 <div class="question-text">In layers of BAS architecture, it is where the rules and commands are set – like turning on air-conditioning when the temperature gets too high.</div>
                 <ul class="options">
-                    <li>a. Application layer</li>
-                    <li>b. Supervisory layer</li>
-                    <li>c. Filed Controller</li>
-                    <li class="correct">d. Input/Output</li>
+                    <li><input type="radio" name="q24" value="a"> a. Application layer</li>
+                    <li><input type="radio" name="q24" value="b"> b. Supervisory layer</li>
+                    <li><input type="radio" name="q24" value="c"> c. Filed Controller</li>
+                    <li><input type="radio" name="q24" value="d"> d. Input/Output</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="d">
                 <div class="question-number">Question 25</div>
                 <div class="question-text">Actual devices such as sensors, switches, actuators and valves describe what layer of BAS architecture?</div>
                 <ul class="options">
-                    <li>a. Application later</li>
-                    <li>b. Supervisory layer</li>
-                    <li>c. Filed Controller</li>
-                    <li class="correct">d. Input/Output</li>
+                    <li><input type="radio" name="q25" value="a"> a. Application later</li>
+                    <li><input type="radio" name="q25" value="b"> b. Supervisory layer</li>
+                    <li><input type="radio" name="q25" value="c"> c. Filed Controller</li>
+                    <li><input type="radio" name="q25" value="d"> d. Input/Output</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 26</div>
                 <div class="question-text">A practical example of composite construction is:</div>
                 <ul class="options">
-                    <li>a. Bamboo hut</li>
-                    <li class="correct">b. Millennium Tower in Vienna</li>
-                    <li>c. Eiffel Tower in Paris</li>
-                    <li>d. Ili Likha Artists Village</li>
+                    <li><input type="radio" name="q26" value="a"> a. Bamboo hut</li>
+                    <li><input type="radio" name="q26" value="b"> b. Millennium Tower in Vienna</li>
+                    <li><input type="radio" name="q26" value="c"> c. Eiffel Tower in Paris</li>
+                    <li><input type="radio" name="q26" value="d"> d. Ili Likha Artists Village</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="d">
                 <div class="question-number">Question 27</div>
                 <div class="question-text">Which of the following is NOT a disadvantage of tensile membrane structures?</div>
                 <ul class="options">
-                    <li>a. Easy to be damaged</li>
-                    <li>b. Poor performance</li>
-                    <li>c. Difficulty in maintenance</li>
-                    <li class="correct">d. Fire resistance</li>
+                    <li><input type="radio" name="q27" value="a"> a. Easy to be damaged</li>
+                    <li><input type="radio" name="q27" value="b"> b. Poor performance</li>
+                    <li><input type="radio" name="q27" value="c"> c. Difficulty in maintenance</li>
+                    <li><input type="radio" name="q27" value="d"> d. Fire resistance</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="d">
                 <div class="question-number">Question 28</div>
                 <div class="question-text">These are different types of Tensile membrane structure EXCEPT:</div>
                 <ul class="options">
-                    <li>a. Anticlastic</li>
-                    <li>b. Parallel Arch</li>
-                    <li>c. Cable net membrane</li>
-                    <li class="correct">d. Free form membrane</li>
+                    <li><input type="radio" name="q28" value="a"> a. Anticlastic</li>
+                    <li><input type="radio" name="q28" value="b"> b. Parallel Arch</li>
+                    <li><input type="radio" name="q28" value="c"> c. Cable net membrane</li>
+                    <li><input type="radio" name="q28" value="d"> d. Free form membrane</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="b">
                 <div class="question-number">Question 29</div>
                 <div class="question-text">Which of the following systems or requires less manpower?</div>
                 <ul class="options">
-                    <li>a. Conventional construction system</li>
-                    <li class="correct">b. Precast System</li>
-                    <li>c. Cast-in-place system</li>
-                    <li>d. Sisiphus system</li>
+                    <li><input type="radio" name="q29" value="a"> a. Conventional construction system</li>
+                    <li><input type="radio" name="q29" value="b"> b. Precast System</li>
+                    <li><input type="radio" name="q29" value="c"> c. Cast-in-place system</li>
+                    <li><input type="radio" name="q29" value="d"> d. Sisiphus system</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="a">
                 <div class="question-number">Question 30</div>
                 <div class="question-text">The following system requires skilled manpower except:</div>
                 <ul class="options">
-                    <li class="correct">a. Conventional construction system</li>
-                    <li>b. Precast System</li>
-                    <li>c. Cast-in-place system</li>
-                    <li>d. Geodesic System</li>
+                    <li><input type="radio" name="q30" value="a"> a. Conventional construction system</li>
+                    <li><input type="radio" name="q30" value="b"> b. Precast System</li>
+                    <li><input type="radio" name="q30" value="c"> c. Cast-in-place system</li>
+                    <li><input type="radio" name="q30" value="d"> d. Geodesic System</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="a">
                 <div class="question-number">Question 31</div>
                 <div class="question-text">Which of the following systems is considered to be non-load bearing?</div>
                 <ul class="options">
-                    <li class="correct">a. Curtain wall System</li>
-                    <li>b. Precast System</li>
-                    <li>c. Post-tension System</li>
-                    <li>d. Composite wall System</li>
+                    <li><input type="radio" name="q31" value="a"> a. Curtain wall System</li>
+                    <li><input type="radio" name="q31" value="b"> b. Precast System</li>
+                    <li><input type="radio" name="q31" value="c"> c. Post-tension System</li>
+                    <li><input type="radio" name="q31" value="d"> d. Composite wall System</li>
                 </ul>
             </div>
 
-            <div class="question">
+            <div class="question" data-correct="d">
                 <div class="question-number">Question 32</div>
                 <div class="question-text">Which of the following systems is most suitable in forming the core of the building or the elevator shaft of the building?</div>
                 <ul class="options">
-                    <li>a. Conventional construction system</li>
-                    <li>b. Precast System</li>
-                    <li>c. Cast-in-place system</li>
-                    <li class="correct">d. Slipform system</li>
+                    <li><input type="radio" name="q32" value="a"> a. Conventional construction system</li>
+                    <li><input type="radio" name="q32" value="b"> b. Precast System</li>
+                    <li><input type="radio" name="q32" value="c"> c. Cast-in-place system</li>
+                    <li><input type="radio" name="q32" value="d"> d. Slipform system</li>
                 </ul>
             </div>
 
@@ -509,25 +520,76 @@
                 <div style="text-align: center; margin: 20px 0;">
                     <img src="https://i.ibb.co/dJwycLK9/PNG.png" alt="PNG" border="0" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 </div>
-                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #ffc107;">
-                    <strong>📝 Answer (not sure):</strong><br>
+                <div class="inputs">
+                    <label>No.71: <input type="text" id="q33-71"></label><br>
+                    <label>No.72: <input type="text" id="q33-72"></label><br>
+                    <label>No.73: <input type="text" id="q33-73"></label><br>
+                    <label>No.74: <input type="text" id="q33-74"></label><br>
+                    <label>No.75: <input type="text" id="q33-75"></label><br>
+                </div>
+                <div class="answer-div" style="display:none; background: #fff3cd; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #ffc107;">
+                    <strong>📝 Correct Answers:</strong><br>
                     • <strong>No.71:</strong> Shear stud<br>
                     • <strong>No.72:</strong> welded wire fabric<br>
                     • <strong>No.73:</strong> steel deck<br>
                     • <strong>No.74:</strong> embossments<br>
                     • <strong>No.75:</strong> Steel beam
                 </div>
+                </div>
+
             </div>
-
-        </div>
-    </div>
-
-    <script>
-        // Optional: Add functionality to show/hide answers
+            <div style="text-align: center; margin: 30px 0;"><button id="submit-btn" class="toggle-btn">Submit Quiz</button></div>
+        </div>    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const correctAnswers = document.querySelectorAll('.options li.correct');
-            correctAnswers.forEach(answer => {
-                answer.style.background = '#d4edda';
+            const submitBtn = document.getElementById('submit-btn');
+            const scoreDisplay = document.getElementById('score-display');
+            const scoreSpan = document.getElementById('score');
+            submitBtn.addEventListener('click', function() {
+                let score = 0;
+                const questions = document.querySelectorAll('.question');
+                questions.forEach((q, index) => {
+                    if (index < 32) { // multiple choice
+                        const correct = q.dataset.correct;
+                        const selected = q.querySelector('input[type="radio"]:checked');
+                        const options = q.querySelectorAll('li');
+                        if (selected && selected.value === correct) {
+                            score++;
+                            selected.parentElement.classList.add('selected-correct');
+                        } else {
+                            if (selected) {
+                                selected.parentElement.classList.add('selected-wrong');
+                            }
+                            // show correct
+                            options.forEach(li => {
+                                if (li.querySelector('input').value === correct) {
+                                    li.classList.add('correct');
+                                }
+                            });
+                        }
+                        // disable radios
+                        q.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = true);
+                    } else { // q33
+                        const inputs = q.querySelectorAll('input[type="text"]');
+                        const corrects = ['Shear stud', 'welded wire fabric', 'steel deck', 'embossments', 'Steel beam'];
+                        inputs.forEach((input, i) => {
+                            const val = input.value.trim().toLowerCase();
+                            const corr = corrects[i].toLowerCase();
+                            if (val === corr) {
+                                score++;
+                                input.style.background = '#d4edda';
+                            } else {
+                                input.style.background = '#f8d7da';
+                            }
+                            input.disabled = true;
+                        });
+                        // show correct answers
+                        const answerDiv = q.querySelector('.answer-div');
+                        if (answerDiv) answerDiv.style.display = 'block';
+                    }
+                });
+                scoreSpan.textContent = score;
+                scoreDisplay.style.display = 'block';
+                submitBtn.disabled = true;
             });
         });
     </script>

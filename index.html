@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Automation Quiz Reviewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .question:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .options {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .options li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .options li:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .options li.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            font-weight: bold;
+            color: #155724;
+        }
+        
+        .options li.correct::before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .toggle-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-btn:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .stats {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .stats h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏢 Building Automation & Smart Building</h1>
+            <p>Quiz Reviewer - Click "Show Answer" to reveal correct answers</p>
+        </div>
+        
+        <div class="content">
+            <div class="stats">
+                <h3>Total Questions: 33</h3>
+                <p>Review each question carefully. Correct answers are highlighted in green.</p>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">Which of the following is the primary objective of a Building Automation System (BAS)?</div>
+                <ul class="options">
+                    <li>a. To increase construction costs</li>
+                    <li class="correct">b. To improve occupant comfort and reduce energy use</li>
+                    <li>c. To make buildings taller</li>
+                    <li>d. To replace architectural design</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Which of the following is usually the largest energy consumer in a building?</div>
+                <ul class="options">
+                    <li>a. Lighting system</li>
+                    <li class="correct">b. HVAC system</li>
+                    <li>c. Water management system</li>
+                    <li>d. Elevator system</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">Which of the following best describes the concept of a "Smart Building"?</div>
+                <ul class="options">
+                    <li>a. A building that uses only high-efficiency materials during construction</li>
+                    <li class="correct">b. A building where integrated technologies optimize energy, comfort, and operations through automation</li>
+                    <li>c. A building designed with advanced structural load-bearing systems</li>
+                    <li>d. A building with prioritizes aesthetics over performance</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">What is the primary disadvantage of an all-air HVAC system?</div>
+                <ul class="options">
+                    <li>a. It is difficult to install</li>
+                    <li class="correct">b. Requires close cooperation between architects and system designers</li>
+                    <li>c. Cannot use outdoor air for cooling</li>
+                    <li>d. Occupants are always exposed to mechanical noise</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">Which lighting control strategy directly reduces energy use by switching lights based on room presence?</div>
+                <ul class="options">
+                    <li>a. Daylight sensors</li>
+                    <li class="correct">b. Occupancy sensors</li>
+                    <li>c. Timer switches</li>
+                    <li>d. RGB dimmers</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">Compared to traditional roof systems, one major limitation of membrane structures is:</div>
+                <ul class="options">
+                    <li class="correct">a. They cannot cover large spans</li>
+                    <li>b. They have lower thermal and acoustic insulation</li>
+                    <li>c. They are always permanent and rigid</li>
+                    <li>d. They require massive foundations</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">The introduction of electrical and electronic controls allowed centralized control of heating and ventilation systems during the early 20th century. True or False?</div>
+                <ul class="options">
+                    <li>a. True</li>
+                    <li class="correct">b. False</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">It is the network of Internet-connected devices that collect, share, and analyze data, often via cloud computing.</div>
+                <ul class="options">
+                    <li>a. BAS</li>
+                    <li>b. DDC</li>
+                    <li class="correct">c. IoT</li>
+                    <li>d. A or C</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">A local example of tensile membrane use in the Philippines is:</div>
+                <ul class="options">
+                    <li>a. MOA Grounds</li>
+                    <li>b. UP Oval</li>
+                    <li class="correct">c. SM South mall Canopy</li>
+                    <li>d. Manila City Hall</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">Which is a key reason for the rising use of tensile membrane structures today?</div>
+                <ul class="options">
+                    <li>a. Need for heavier stone construction</li>
+                    <li class="correct">b. Growing demand for energy-efficient solutions</li>
+                    <li>c. Reduced importance of aesthetics</li>
+                    <li>d. Elimination of steel in architecture</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 11</div>
+                <div class="question-text">Which of the following best describes a membrane structure?</div>
+                <ul class="options">
+                    <li class="correct">a. A thin, load-bearing surface</li>
+                    <li>b. A wall made of heavy stone</li>
+                    <li>c. A prefabricated concrete shell</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 12</div>
+                <div class="question-text">What is the primary characteristic of membrane structures?</div>
+                <ul class="options">
+                    <li>a. They are always made of glass</li>
+                    <li>b. They withstand heavy compression</li>
+                    <li class="correct">c. They carry loads mainly through tension</li>
+                    <li>d. They require thick foundations</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 13</div>
+                <div class="question-text">It is a type of membrane structure in which the center of curvature are located on opposing sides of the surface. Commonly described as a saddle shape.</div>
+                <ul class="options">
+                    <li>a. Parallel Arch</li>
+                    <li class="correct">b. Anticlastic</li>
+                    <li>c. Barrel Vault</li>
+                    <li>d. Cable Net membrane</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 14</div>
+                <div class="question-text">In a composite system, these are the main composite elements of the building, EXCEPT:</div>
+                <ul class="options">
+                    <li>a. Composite Slab</li>
+                    <li>b. Composite Beam</li>
+                    <li class="correct">c. Composite Wall</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 15</div>
+                <div class="question-text">In water management systems, which of the following fixtures uses the most water in a typical home?</div>
+                <ul class="options">
+                    <li>a. Faucets</li>
+                    <li class="correct">b. Toilets</li>
+                    <li>c. Dishwashers</li>
+                    <li>d. Showers</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 16</div>
+                <div class="question-text">Who was the true originator of the first geodesic dome, built in 1926?</div>
+                <ul class="options">
+                    <li>a. R. Buckminster Fuller</li>
+                    <li>b. Antoni Gaudí</li>
+                    <li class="correct">c. Walther Bauersfeld</li>
+                    <li>d. Le Corbusier</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 17</div>
+                <div class="question-text">Based on the image showing a concrete slab with support column, which type of slab is this?</div>
+                <ul class="options">
+                    <li class="correct">a. Haunched Slab</li>
+                    <li>b. Conventional</li>
+                    <li>c. T-Beam</li>
+                    <li>d. Steel Bars</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 18</div>
+                <div class="question-text">Which of the following best describes a membrane structure?</div>
+                <ul class="options">
+                    <li>a. A rigid load-bearing system</li>
+                    <li class="correct">b. A lightweight tensile surface supported by cables or frames</li>
+                    <li>c. A prefabricated concrete shell</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 19</div>
+                <div class="question-text">An architect is designing a smart building that integrates BAS to enhance sustainability and occupant comfort. Which design decision best demonstrates the collaboration of architecture and BAS to reduce energy use while maintaining indoor comfort?</div>
+                <ul class="options">
+                    <li>a. Using large south-facing glass façades without shading devices</li>
+                    <li class="correct">b. Incorporating economizer control with operable windows and natural ventilation strategies</li>
+                    <li>c. Designing open-plan spaces without consideration of air zoning or BAS</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 20</div>
+                <div class="question-text">Which load condition is usually the most critical in designing tensile membrane structures?</div>
+                <ul class="options">
+                    <li>a. Dead load of the fabric</li>
+                    <li class="correct">b. Wind load and uplift forces</li>
+                    <li>c. Earthquake vibration</li>
+                    <li>d. Self-weight of the supporting frame</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 21</div>
+                <div class="question-text">Compared to traditional roof systems, one major limitation of membrane structures is:</div>
+                <ul class="options">
+                    <li>a. They cannot cover large spans</li>
+                    <li class="correct">b. They have lower thermal and acoustic insulation</li>
+                    <li>c. They are always permanent and rigid</li>
+                    <li>d. They require massive foundations</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 22</div>
+                <div class="question-text">Thermostats were introduced which allowed finer control of HVAC systems during what period?</div>
+                <ul class="options">
+                    <li>a. Late 20th Century (80s-90s)</li>
+                    <li>b. 21st Century</li>
+                    <li class="correct">c. Mid-20th Century (60s-70s)</li>
+                    <li>d. None of the above</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 23</div>
+                <div class="question-text">An open communication standard for BAS devices to talk to each other regardless of manufacturer.</div>
+                <ul class="options">
+                    <li>a. Local Operating Network (LON)</li>
+                    <li>b. Local Area Network (LAN)</li>
+                    <li>c. Direct Digital Control (DDC)</li>
+                    <li class="correct">d. BACnet (Building Automation and Control Network)</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 24</div>
+                <div class="question-text">In layers of BAS architecture, it is where the rules and commands are set – like turning on air-conditioning when the temperature gets too high.</div>
+                <ul class="options">
+                    <li>a. Application layer</li>
+                    <li>b. Supervisory layer</li>
+                    <li>c. Filed Controller</li>
+                    <li class="correct">d. Input/Output</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 25</div>
+                <div class="question-text">Actual devices such as sensors, switches, actuators and valves describe what layer of BAS architecture?</div>
+                <ul class="options">
+                    <li>a. Application later</li>
+                    <li>b. Supervisory layer</li>
+                    <li>c. Filed Controller</li>
+                    <li class="correct">d. Input/Output</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 26</div>
+                <div class="question-text">A practical example of composite construction is:</div>
+                <ul class="options">
+                    <li>a. Bamboo hut</li>
+                    <li class="correct">b. Millennium Tower in Vienna</li>
+                    <li>c. Eiffel Tower in Paris</li>
+                    <li>d. Ili Likha Artists Village</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 27</div>
+                <div class="question-text">Which of the following is NOT a disadvantage of tensile membrane structures?</div>
+                <ul class="options">
+                    <li>a. Easy to be damaged</li>
+                    <li>b. Poor performance</li>
+                    <li>c. Difficulty in maintenance</li>
+                    <li class="correct">d. Fire resistance</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 28</div>
+                <div class="question-text">These are different types of Tensile membrane structure EXCEPT:</div>
+                <ul class="options">
+                    <li>a. Anticlastic</li>
+                    <li>b. Parallel Arch</li>
+                    <li>c. Cable net membrane</li>
+                    <li class="correct">d. Free form membrane</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 29</div>
+                <div class="question-text">Which of the following systems or requires less manpower?</div>
+                <ul class="options">
+                    <li>a. Conventional construction system</li>
+                    <li class="correct">b. Precast System</li>
+                    <li>c. Cast-in-place system</li>
+                    <li>d. Sisiphus system</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 30</div>
+                <div class="question-text">The following system requires skilled manpower except:</div>
+                <ul class="options">
+                    <li class="correct">a. Conventional construction system</li>
+                    <li>b. Precast System</li>
+                    <li>c. Cast-in-place system</li>
+                    <li>d. Geodesic System</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 31</div>
+                <div class="question-text">Which of the following systems is considered to be non-load bearing?</div>
+                <ul class="options">
+                    <li class="correct">a. Curtain wall System</li>
+                    <li>b. Precast System</li>
+                    <li>c. Post-tension System</li>
+                    <li>d. Composite wall System</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 32</div>
+                <div class="question-text">Which of the following systems is most suitable in forming the core of the building or the elevator shaft of the building?</div>
+                <ul class="options">
+                    <li>a. Conventional construction system</li>
+                    <li>b. Precast System</li>
+                    <li>c. Cast-in-place system</li>
+                    <li class="correct">d. Slipform system</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 33</div>
+                <div class="question-text">Based on the composite beam diagram, identify the components labeled in the image:</div>
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="https://i.ibb.co/dJwycLK9/PNG.png" alt="PNG" border="0" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #ffc107;">
+                    <strong>📝 Answer (not sure):</strong><br>
+                    • <strong>No.71:</strong> Reinforcement bars<br>
+                    • <strong>No.72:</strong> Concrete slab<br>
+                    • <strong>No.73:</strong> Shear connectors<br>
+                    • <strong>No.74:</strong> Steel beam flange<br>
+                    • <strong>No.75:</strong> Steel beam
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add functionality to show/hide answers
+        document.addEventListener('DOMContentLoaded', function() {
+            const correctAnswers = document.querySelectorAll('.options li.correct');
+            correctAnswers.forEach(answer => {
+                answer.style.background = '#d4edda';
+            });
+        });
+    </script>
+</body>
+</html>
